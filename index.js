@@ -11,13 +11,13 @@ const {SecretClient} = require('@azure/keyvault-secrets');
 const credential = new ManagedIdentityCredential();
 
 // Replace value with your Key Vault name here
-const vaultName = "<MyKeyVaultName>";
+const vaultName = "dev-vaultaz204";
 const url = `https://${vaultName}.vault.azure.net`;
   
 const client = new SecretClient(url, credential);
 
 // Replace value with your secret name here
-const secretName = "<MySecretName>";
+const secretName = "password";
 
 var server = http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
