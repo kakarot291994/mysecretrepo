@@ -11,7 +11,7 @@ const {SecretClient} = require('@azure/keyvault-secrets');
 const credential = new ManagedIdentityCredential();
 
 // Replace value with your Key Vault name here
-const vaultName = "dev-vaultaz204";
+const vaultName = "dev-vaultaz2042";
 const url = `https://${vaultName}.vault.azure.net`;
   
 const client = new SecretClient(url, credential);
