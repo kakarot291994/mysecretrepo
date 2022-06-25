@@ -17,14 +17,14 @@ const url = `https://${vaultName}.vault.azure.net`;
 const client = new SecretClient(url, credential);
 
 // Replace value with your secret name here
-const secretName = "password";
+const secretName = "username";
 
 var server = http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
     async function main(){
         // Get the secret we created
         const secret = await client.getSecret(secretName);
-        response.write(`Your secret value is: ${secret.value}`);
+        response.write(`Your username is: ${secret.value}`);
         response.end();
     }
     main().catch((err) => {
